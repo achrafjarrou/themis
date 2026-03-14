@@ -1,0 +1,71 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg:       #04080f;
+  --bg2:      #080d1a;
+  --bg3:      #0c1220;
+  --border:   #131d2e;
+  --border2:  #1a2540;
+  --text:     #e2e8f0;
+  --text2:    #94a3b8;
+  --text3:    #475569;
+  --text4:    #1e2d4a;
+  --blue:     #3b82f6;
+  --blue2:    #2563eb;
+  --purple:   #8b5cf6;
+  --green:    #10b981;
+  --orange:   #f59e0b;
+  --red:      #ef4444;
+  --mono:     "JetBrains Mono", monospace;
+  --sans:     "Inter", sans-serif;
+  --display:  "Syne", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+
+html { scroll-behavior: smooth }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px }
+::-webkit-scrollbar-track { background: var(--bg) }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px }
+
+/* ── Selection ─────────────────────────────────────── */
+::selection { background: rgba(59,130,246,0.3); color: #fff }
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes spin    { to { transform: rotate(360deg) } }
+@keyframes pulse   { 0%,100% { opacity:1 } 50% { opacity:.4 } }
+@keyframes fadeUp  { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:none } }
+@keyframes shimmer { from { background-position: -200% 0 } to { background-position: 200% 0 } }
+@keyframes scan    { 0% { top: 0 } 100% { top: 100% } }
+@keyframes glow    { 0%,100% { box-shadow: 0 0 20px rgba(59,130,246,0.1) } 50% { box-shadow: 0 0 40px rgba(59,130,246,0.25) } }
+
+.animate-fadeUp  { animation: fadeUp .4s ease both }
+.animate-spin    { animation: spin 1s linear infinite }
+.animate-pulse   { animation: pulse 2s ease infinite }
+.animate-glow    { animation: glow 3s ease infinite }
+
+/* ── Grid noise background ──────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Glass card ─────────────────────────────────────── */
+.glass {
+  background: rgba(8,13,26,0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+}

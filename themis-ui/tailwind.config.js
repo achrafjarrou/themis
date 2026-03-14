@@ -1,0 +1,1 @@
+export default{content:["./index.html","./src/**/*.{js,ts,jsx,tsx}"],theme:{extend:{colors:{navy:{"900":"#0a0e1a","800":"#0f1629","700":"#111d35","600":"#162040","500":"#1e3a5f"},accent:{blue:"#3b82f6",purple:"#8b5cf6",cyan:"#06b6d4",green:"#10b981",red:"#ef4444",orange:"#f59e0b"}},fontFamily:{mono:["JetBrains Mono","monospace"]}}},plugins:[]}

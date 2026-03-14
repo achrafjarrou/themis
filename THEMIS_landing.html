@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THEMIS — EU AI Act Compliance Intelligence</title>
+<style>
+  :root{--bg:#060912;--surf:#0d1424;--border:#1e2d4a;--text:#e2e8f0;--muted:#64748b;--accent:#6366f1;--green:#10b981;--red:#ef4444;--yellow:#f59e0b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(6,9,18,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:800;font-size:1.2rem;letter-spacing:2px}
+  .logo span{color:var(--accent)}
+  .nav-cta{padding:.5rem 1.25rem;background:var(--accent);color:#fff;border-radius:8px;font-weight:600;font-size:.85rem;transition:.2s}
+  .nav-cta:hover{background:#4f46e5}
+
+  /* HERO */
+  .hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(99,102,241,.15),transparent)}
+  .hero-badge{display:inline-block;padding:.35rem 1rem;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);border-radius:20px;font-size:.8rem;color:#a5b4fc;font-family:monospace;letter-spacing:1px;margin-bottom:1.5rem}
+  h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:1.5rem}
+  h1 .grad{background:linear-gradient(135deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 2.5rem}
+  .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn-primary{padding:.9rem 2rem;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:10px;font-weight:700;font-size:1rem;transition:.2s;box-shadow:0 4px 20px rgba(99,102,241,.4)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-secondary{padding:.9rem 2rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-weight:600;font-size:1rem;transition:.2s}
+  .btn-secondary:hover{border-color:var(--accent)}
+
+  /* METRICS */
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;max-width:900px;margin:3rem auto;padding:0 2rem}
+  .metric{text-align:center;padding:1.5rem;background:var(--surf);border:1px solid var(--border);border-radius:12px}
+  .metric-val{font-size:2.2rem;font-weight:800;color:var(--accent);display:block}
+  .metric-lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:.25rem}
+
+  /* FEATURES */
+  section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+  .section-label{font-size:.75rem;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-family:monospace;margin-bottom:.75rem}
+  h2{font-size:2rem;font-weight:800;letter-spacing:-1px;margin-bottom:1rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+  .feat-card{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.2s}
+  .feat-card:hover{border-color:var(--accent)}
+  .feat-icon{font-size:2rem;margin-bottom:1rem}
+  .feat-title{font-weight:700;font-size:1rem;margin-bottom:.5rem}
+  .feat-desc{color:var(--muted);font-size:.875rem}
+
+  /* PIPELINE */
+  .pipeline{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-top:3rem;font-family:monospace;font-size:.85rem}
+  .pipeline-title{color:var(--muted);margin-bottom:1rem;font-size:.75rem;letter-spacing:2px;text-transform:uppercase}
+  .pipeline-step{display:flex;align-items:center;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+  .pipeline-step:last-child{border-bottom:none}
+  .step-icon{width:32px;height:32px;border-radius:8px;background:rgba(99,102,241,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .step-time{margin-left:auto;color:var(--green);font-size:.75rem}
+
+  /* EVIDENCE CHAIN */
+  .chain{background:#060912;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:2rem;font-family:monospace;font-size:.8rem}
+  .chain-title{color:var(--muted);margin-bottom:1rem;font-size:.7rem;letter-spacing:2px}
+  .chain-step{padding:.4rem 0;border-bottom:1px solid #0f172a;display:flex;gap:.75rem}
+  .chain-step:last-child{border:none}
+  .chain-type{color:var(--accent);min-width:130px;font-weight:700;font-size:.7rem}
+  .chain-ref{color:var(--muted);min-width:80px;font-size:.7rem}
+  .chain-conf{color:var(--green);min-width:40px;font-size:.7rem}
+  .chain-hash{color:var(--muted);font-size:.65rem;margin-top:.75rem;border-top:1px solid var(--border);padding-top:.5rem}
+
+  /* PRICING */
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+  .price-card{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:2rem}
+  .price-card.featured{border-color:var(--accent);position:relative}
+  .price-card.featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:2px;padding:.2rem .75rem;border-radius:20px}
+  .plan-name{font-size:.75rem;text-transform:uppercase;letter-spacing:3px;color:var(--muted);font-family:monospace;margin-bottom:.5rem}
+  .plan-price{font-size:2.5rem;font-weight:800;margin-bottom:.25rem}
+  .plan-price span{font-size:1rem;font-weight:400;color:var(--muted)}
+  .plan-desc{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
+  .plan-features{list-style:none}
+  .plan-features li{padding:.35rem 0;font-size:.875rem;display:flex;align-items:center;gap:.5rem}
+  .plan-features li::before{content:'✓';color:var(--green);font-weight:700}
+  .plan-btn{display:block;text-align:center;padding:.75rem;border-radius:8px;font-weight:700;margin-top:1.5rem;transition:.2s}
+  .plan-btn-primary{background:var(--accent);color:#fff}
+  .plan-btn-outline{border:1px solid var(--border);color:var(--text)}
+  .plan-btn:hover{opacity:.9;transform:translateY(-1px)}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">⚖ <span>THEMIS</span></div>
+  <a href="#pricing" class="nav-cta">Get Early Access</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-badge">EU AI ACT · COMPLIANCE INTELLIGENCE · AUGUST 2026</div>
+    <h1>Your AI System Is<br><span class="grad">Compliant or Fined.</span></h1>
+    <p class="hero-sub">THEMIS audits your AI system against the EU AI Act, GDPR and NIST AI RMF in 2 minutes. Cryptographic EvidenceChain™ proof for every decision.</p>
+    <div class="cta-row">
+      <a href="#demo" class="btn-primary">→ See Live Demo</a>
+      <a href="https://github.com/achrafjarrou/themis" class="btn-secondary">View on GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metric"><span class="metric-val">2 min</span><div class="metric-lbl">vs 6 weeks manual</div></div>
+  <div class="metric"><span class="metric-val">85+</span><div class="metric-lbl">Articles indexed</div></div>
+  <div class="metric"><span class="metric-val">SHA-256</span><div class="metric-lbl">Cryptographic proof</div></div>
+  <div class="metric"><span class="metric-val">€35M</span><div class="metric-lbl">Max EU penalty</div></div>
+  <div class="metric"><span class="metric-val">Aug 2026</span><div class="metric-lbl">Compliance deadline</div></div>
+</div>
+
+<!-- PIPELINE -->
+<section>
+  <div class="section-label">How It Works</div>
+  <h2>6-Step Autonomous Pipeline</h2>
+  <p style="color:var(--muted)">Powered by LangGraph multi-agent orchestration. Upload once, get a full audit report.</p>
+
+  <div class="pipeline">
+    <div class="pipeline-title">Pipeline · Live Execution</div>
+    <div class="pipeline-step"><div class="step-icon">⚡</div><div><strong>Risk Classification</strong> — Article 6 + Annex III assessment</div><div class="step-time">~1s</div></div>
+    <div class="pipeline-step"><div class="step-icon">🔍</div><div><strong>ContradictionDetector™</strong> — Internal contradiction scan</div><div class="step-time">~3s</div></div>
+    <div class="pipeline-step"><div class="step-icon">🗺</div><div><strong>HyDE + Rerank RAG</strong> — Obligation mapping via hybrid retrieval</div><div class="step-time">~15s</div></div>
+    <div class="pipeline-step"><div class="step-icon">⚙</div><div><strong>EvidenceChain™ Analysis</strong> — Parallel gap analysis, SHA-256 proofs</div><div class="step-time">~90s</div></div>
+    <div class="pipeline-step"><div class="step-icon">👤</div><div><strong>Human Review (HITL)</strong> — LangGraph interrupt() for critical findings</div><div class="step-time">optional</div></div>
+    <div class="pipeline-step"><div class="step-icon">📋</div><div><strong>Report Generation</strong> — Score, gaps, remediation, PDF export</div><div class="step-time">~2s</div></div>
+  </div>
+</section>
+
+<!-- EVIDENCE CHAIN DEMO -->
+<section>
+  <div class="section-label">EvidenceChain™</div>
+  <h2>Cryptographic Audit Proof</h2>
+  <p style="color:var(--muted)">Every compliance decision backed by a tamper-proof chain. Not a black box.</p>
+
+  <div class="chain">
+    <div class="chain-title">Article 14 — Human Oversight · Status: COMPLIANT · Confidence: 90%</div>
+    <div class="chain-step"><span class="chain-type">⚖ LEGAL_PREMISE</span><span class="chain-ref">Article 14</span><span class="chain-conf">90%</span><span>Human oversight is required during high-risk AI use</span></div>
+    <div class="chain-step"><span class="chain-type">📄 DOCUMENT_FACT</span><span class="chain-ref">System Doc</span><span class="chain-conf">70%</span><span>IBM watsonx.ai is a high-risk AI system</span></div>
+    <div class="chain-step"><span class="chain-type">→ INFERENCE</span><span class="chain-ref">Analysis</span><span class="chain-conf">80%</span><span>Human oversight applicable during IBM watsonx.ai use</span></div>
+    <div class="chain-step"><span class="chain-type">✓ CONCLUSION</span><span class="chain-ref">THEMIS</span><span class="chain-conf">90%</span><span>System implemented with human oversight mechanisms</span></div>
+    <div class="chain-hash">🔐 SHA-256 Integrity Hash: d8acb1d2571a9714 · Verified ✓</div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="section-label">Features</div>
+  <h2>Enterprise-Grade AI Compliance</h2>
+  <div class="grid-3">
+    <div class="feat-card"><div class="feat-icon">⚖</div><div class="feat-title">Multi-Framework Analysis</div><div class="feat-desc">EU AI Act, GDPR, NIST AI RMF and ISO 42001 — all in a single analysis run.</div></div>
+    <div class="feat-card"><div class="feat-icon">🔐</div><div class="feat-title">EvidenceChain™ SHA-256</div><div class="feat-desc">Immutable cryptographic proof for every compliance decision. Court-admissible audit trail.</div></div>
+    <div class="feat-card"><div class="feat-icon">🤖</div><div class="feat-title">LangGraph Multi-Agent</div><div class="feat-desc">6-node autonomous pipeline with HITL interrupt for human oversight when needed.</div></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Compliance Score</div><div class="feat-desc">0-100 score with article-by-article breakdown and prioritized remediation steps.</div></div>
+    <div class="feat-card"><div class="feat-icon">🔍</div><div class="feat-title">ContradictionDetector™</div><div class="feat-desc">Scans documentation for internal inconsistencies that could expose you to regulatory risk.</div></div>
+    <div class="feat-card"><div class="feat-icon">📄</div><div class="feat-title">PDF Report Export</div><div class="feat-desc">Professional compliance dossier downloadable as PDF. Ready for board presentation or regulatory submission.</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2>Simple, Transparent Pricing</h2>
+  <p style="color:var(--muted)">Start free. Scale as you grow. No lock-in.</p>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">€0<span>/month</span></div>
+      <div class="plan-desc">Perfect for initial assessment</div>
+      <ul class="plan-features">
+        <li>3 analyses per month</li>
+        <li>EU AI Act + GDPR</li>
+        <li>Basic compliance score</li>
+        <li>HTML report</li>
+        <li>Community support</li>
+      </ul>
+      <a href="#" class="plan-btn plan-btn-outline">Get Started Free</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="plan-name">Professional</div>
+      <div class="plan-price">€299<span>/month</span></div>
+      <div class="plan-desc">For compliance teams</div>
+      <ul class="plan-features">
+        <li>Unlimited analyses</li>
+        <li>EU AI Act + GDPR + NIST + ISO 42001</li>
+        <li>EvidenceChain™ SHA-256 proof</li>
+        <li>PDF export + history</li>
+        <li>HITL human review workflow</li>
+        <li>API access</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="mailto:achraf.jarrou@email.com" class="plan-btn plan-btn-primary">Start Free Trial</a>
+    </div>
+
+    <div class="price-card">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price">Custom</div>
+      <div class="plan-desc">For large organizations</div>
+      <ul class="plan-features">
+        <li>On-premise deployment</li>
+        <li>Custom frameworks</li>
+        <li>Bulk PDF processing</li>
+        <li>SSO + RBAC</li>
+        <li>SLA 99.9%</li>
+        <li>Dedicated support</li>
+        <li>Legal review integration</li>
+      </ul>
+      <a href="mailto:achraf.jarrou@email.com" class="plan-btn plan-btn-outline">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>⚖ THEMIS™ — Built by <strong>Achraf Jarrou</strong> · AI/Agentic Systems Architect · Casablanca, Morocco</p>
+  <p style="margin-top:.5rem">EU AI Act Compliance Intelligence · Not legal advice · Always consult qualified legal counsel</p>
+</footer>
+
+</body>
+</html>

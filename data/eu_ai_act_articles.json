@@ -1,0 +1,674 @@
+[
+  {
+    "id": "art1",
+    "num": "Article 1",
+    "title": "Subject Matter",
+    "framework": "eu_ai_act",
+    "text": "This Regulation establishes harmonised rules on artificial intelligence with the following objectives: to improve the functioning of the internal market and to promote the uptake of human-centric and trustworthy AI."
+  },
+  {
+    "id": "art2",
+    "num": "Article 2",
+    "title": "Scope",
+    "framework": "eu_ai_act",
+    "text": "This Regulation applies to providers placing on the market or putting into service AI systems in the Union, operators of AI systems located within the Union, providers and operators located in third countries where output is used in the Union."
+  },
+  {
+    "id": "art3",
+    "num": "Article 3",
+    "title": "Definitions",
+    "framework": "eu_ai_act",
+    "text": "AI system means a machine-based system designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers from the input it receives how to generate outputs such as predictions, content, recommendations, or decisions."
+  },
+  {
+    "id": "art4",
+    "num": "Article 4",
+    "title": "AI Literacy",
+    "framework": "eu_ai_act",
+    "text": "Providers and operators of AI systems shall take measures to ensure, to their best extent, a sufficient level of AI literacy of their staff and other persons dealing with the operation and use of AI systems on their behalf."
+  },
+  {
+    "id": "art5",
+    "num": "Article 5",
+    "title": "Prohibited AI Practices",
+    "framework": "eu_ai_act",
+    "text": "The following AI practices shall be prohibited: subliminal techniques beyond a person's consciousness, exploiting vulnerabilities of specific groups, social scoring by public authorities, real-time remote biometric identification in public spaces by law enforcement."
+  },
+  {
+    "id": "art6",
+    "num": "Article 6",
+    "title": "Classification of High-Risk AI Systems",
+    "framework": "eu_ai_act",
+    "text": "Regardless of whether an AI system is placed on the market or put into service independently, it shall be considered high-risk where it is intended to be used as a safety component of a product covered by Union harmonisation legislation listed in Annex I."
+  },
+  {
+    "id": "art7",
+    "num": "Article 7",
+    "title": "Amendments to Annex III",
+    "framework": "eu_ai_act",
+    "text": "The Commission is empowered to adopt delegated acts to amend Annex III by adding or modifying use cases of high-risk AI systems where both conditions are met: the AI system poses a significant risk of harm and the AI system has been deployed at scale."
+  },
+  {
+    "id": "art8",
+    "num": "Article 8",
+    "title": "Compliance with Requirements",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems shall comply with the requirements established in this Chapter. These requirements apply to high-risk AI systems as regards their design and development as well as to the risks of such systems for health, safety or fundamental rights."
+  },
+  {
+    "id": "art9",
+    "num": "Article 9",
+    "title": "Risk Management System",
+    "framework": "eu_ai_act",
+    "text": "A risk management system shall be established, implemented, documented and maintained in relation to high-risk AI systems throughout their entire lifecycle. It shall comprise identification and analysis of known and reasonably foreseeable risks, estimation and evaluation of risks."
+  },
+  {
+    "id": "art10",
+    "num": "Article 10",
+    "title": "Data and Data Governance",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems which make use of techniques involving the training of models with data shall be developed on the basis of training, validation and testing data sets that meet quality criteria. Training data shall be subject to appropriate data governance practices."
+  },
+  {
+    "id": "art11",
+    "num": "Article 11",
+    "title": "Technical Documentation",
+    "framework": "eu_ai_act",
+    "text": "The technical documentation of a high-risk AI system shall be drawn up before that system is placed on the market and shall be kept up-to-date. It shall be drawn up in such a way as to demonstrate that it complies with all requirements."
+  },
+  {
+    "id": "art12",
+    "num": "Article 12",
+    "title": "Record-Keeping",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems shall be designed and developed with capabilities enabling the automatic recording of events (logs) over the duration of the lifetime of the system. Logging capabilities shall ensure a level of traceability of the AI system's functioning."
+  },
+  {
+    "id": "art13",
+    "num": "Article 13",
+    "title": "Transparency and Information",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems shall be designed and developed in such a way as to ensure that their operation is sufficiently transparent to enable operators to interpret the system's output and use it appropriately. Providers shall ensure information about capabilities and limitations."
+  },
+  {
+    "id": "art14",
+    "num": "Article 14",
+    "title": "Human Oversight",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems shall be designed and developed in such a way that they can be effectively overseen by natural persons during the period in which the AI system is in use. Human oversight measures shall be proportionate to the risks."
+  },
+  {
+    "id": "art15",
+    "num": "Article 15",
+    "title": "Accuracy, Robustness and Cybersecurity",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and perform consistently in those respects throughout their lifecycle."
+  },
+  {
+    "id": "art16",
+    "num": "Article 16",
+    "title": "Obligations of Providers",
+    "framework": "eu_ai_act",
+    "text": "Providers of high-risk AI systems shall ensure their systems comply with requirements, register in EU database, affix CE marking, draw up declaration of conformity, keep technical documentation, implement quality management systems."
+  },
+  {
+    "id": "art17",
+    "num": "Article 17",
+    "title": "Quality Management System",
+    "framework": "eu_ai_act",
+    "text": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. The system shall cover strategy for regulatory compliance, design specifications, data management techniques, and risk management system."
+  },
+  {
+    "id": "art18",
+    "num": "Article 18",
+    "title": "Documentation Obligations",
+    "framework": "eu_ai_act",
+    "text": "Providers shall keep the technical documentation and quality management documentation for a period of 10 years after the high-risk AI system has been placed on the market or put into service."
+  },
+  {
+    "id": "art19",
+    "num": "Article 19",
+    "title": "Conformity Assessment",
+    "framework": "eu_ai_act",
+    "text": "Providers of high-risk AI systems shall ensure that their systems undergo the relevant conformity assessment procedure prior to being placed on the market. Where compliance is demonstrated, providers shall draw up an EU declaration of conformity."
+  },
+  {
+    "id": "art20",
+    "num": "Article 20",
+    "title": "Automatically Generated Logs",
+    "framework": "eu_ai_act",
+    "text": "Providers of high-risk AI systems shall keep the logs automatically generated by their high-risk AI systems to the extent such logs are under their control. Logs shall be kept for a period of at least 6 months."
+  },
+  {
+    "id": "art21",
+    "num": "Article 21",
+    "title": "Corrective Actions",
+    "framework": "eu_ai_act",
+    "text": "Providers that consider or have reason to consider that a high-risk AI system is not in conformity with this Regulation shall immediately take corrective actions to bring that system into conformity, withdraw it, disable it or recall it."
+  },
+  {
+    "id": "art22",
+    "num": "Article 22",
+    "title": "Duty of Information",
+    "framework": "eu_ai_act",
+    "text": "Providers of high-risk AI systems shall inform the national competent authorities of the Member States in which they made the system available or put it into service of any serious incident or malfunctioning."
+  },
+  {
+    "id": "art23",
+    "num": "Article 23",
+    "title": "Cooperation with Authorities",
+    "framework": "eu_ai_act",
+    "text": "Providers of high-risk AI systems shall, upon request by a national competent authority, provide all information and documentation necessary to demonstrate conformity of the system with the requirements of this Regulation."
+  },
+  {
+    "id": "art24",
+    "num": "Article 24",
+    "title": "Obligations of Product Manufacturers",
+    "framework": "eu_ai_act",
+    "text": "Where a high-risk AI system is related to products to which legal acts listed in Annex I apply, the manufacturer of the product shall take the responsibility for the compliance of the AI system and ensure that the AI system is compliant."
+  },
+  {
+    "id": "art25",
+    "num": "Article 25",
+    "title": "Obligations of Authorised Representatives",
+    "framework": "eu_ai_act",
+    "text": "Before making their services available in the Union, providers not established in the Union shall appoint an authorised representative. The authorised representative shall perform the tasks specified in the mandate received from the provider."
+  },
+  {
+    "id": "art26",
+    "num": "Article 26",
+    "title": "Obligations of Operators",
+    "framework": "eu_ai_act",
+    "text": "Operators shall use high-risk AI systems in accordance with the instructions of use accompanying the systems. They shall assign oversight to natural persons with necessary competence, authority, and resources to perform human oversight."
+  },
+  {
+    "id": "art27",
+    "num": "Article 27",
+    "title": "Obligations of Importers",
+    "framework": "eu_ai_act",
+    "text": "Before placing a high-risk AI system on the market, importers shall ensure that the provider has carried out the relevant conformity assessment and that the technical documentation is drawn up and the CE marking is affixed."
+  },
+  {
+    "id": "art28",
+    "num": "Article 28",
+    "title": "Obligations of Distributors",
+    "framework": "eu_ai_act",
+    "text": "Before making a high-risk AI system available on the market, distributors shall verify that it bears the CE marking, is accompanied by the required documentation, and that the provider and importer have complied with their obligations."
+  },
+  {
+    "id": "art29",
+    "num": "Article 29",
+    "title": "Responsibilities Along the Value Chain",
+    "framework": "eu_ai_act",
+    "text": "Any distributor, importer, operator or other third party shall be considered to be a provider for the purposes of this Regulation and shall be subject to the obligations of the provider when they place a high-risk AI system on the market under their own name."
+  },
+  {
+    "id": "art30",
+    "num": "Article 30",
+    "title": "EU Database for High-Risk AI",
+    "framework": "eu_ai_act",
+    "text": "The Commission shall set up and maintain a EU database containing information on high-risk AI systems referred to in Annex III that are registered in accordance with Article 51. Access to the database shall be public."
+  },
+  {
+    "id": "art31",
+    "num": "Article 31",
+    "title": "Declaration of Conformity",
+    "framework": "eu_ai_act",
+    "text": "The EU declaration of conformity shall state that the high-risk AI system in question fulfils the requirements laid down in Chapter 2. It shall contain the information required in Annex V and shall be translated into the language required by the Member State."
+  },
+  {
+    "id": "art32",
+    "num": "Article 32",
+    "title": "CE Marking",
+    "framework": "eu_ai_act",
+    "text": "The CE marking shall be affixed visibly, legibly and indelibly to the high-risk AI system. Where that is not possible, it shall be affixed to the packaging or to the accompanying documentation. The CE marking shall be followed by the identification number of the notified body."
+  },
+  {
+    "id": "art33",
+    "num": "Article 33",
+    "title": "Notified Bodies",
+    "framework": "eu_ai_act",
+    "text": "Conformity assessment bodies that apply to be notified shall be established under the national law of a Member State. They shall have legal personality and shall be independent of the organisations or AI systems they assess."
+  },
+  {
+    "id": "art34",
+    "num": "Article 34",
+    "title": "Application for Notification",
+    "framework": "eu_ai_act",
+    "text": "Conformity assessment bodies shall submit an application for notification to the notifying authority. The application shall include a description of the conformity assessment activities, and the conformity assessment module or modules for which the body claims to be competent."
+  },
+  {
+    "id": "art35",
+    "num": "Article 35",
+    "title": "Notification Procedure",
+    "framework": "eu_ai_act",
+    "text": "Notifying authorities shall notify the Commission and other Member States of bodies that have satisfied the criteria required for notification using the electronic notification tool developed and managed by the Commission."
+  },
+  {
+    "id": "art36",
+    "num": "Article 36",
+    "title": "Changes to Notifications",
+    "framework": "eu_ai_act",
+    "text": "Where a notifying authority has reason to consider that a notified body no longer meets the requirements or that it is failing to fulfil its obligations, the notifying authority shall investigate the matter with the utmost diligence."
+  },
+  {
+    "id": "art37",
+    "num": "Article 37",
+    "title": "Subsidiaries and Subcontracting",
+    "framework": "eu_ai_act",
+    "text": "Where a notified body subcontracts specific tasks connected with the conformity assessment or has recourse to a subsidiary, it shall ensure that the subcontractor or the subsidiary meets the requirements and it shall inform the notifying authority accordingly."
+  },
+  {
+    "id": "art38",
+    "num": "Article 38",
+    "title": "Coordination of Notified Bodies",
+    "framework": "eu_ai_act",
+    "text": "The Commission shall ensure that appropriate coordination and cooperation between notified bodies active in the conformity assessment procedures of AI systems pursuant to this Regulation are put in place and properly operated."
+  },
+  {
+    "id": "art39",
+    "num": "Article 39",
+    "title": "Third-Country Conformity Assessment Bodies",
+    "framework": "eu_ai_act",
+    "text": "Conformity assessment bodies established under the national law of a third country with which the Union has concluded an agreement may be authorised to carry out the activities of notified bodies under this Regulation."
+  },
+  {
+    "id": "art40",
+    "num": "Article 40",
+    "title": "Harmonised Standards",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems which are in conformity with harmonised standards or parts thereof the references of which have been published in the Official Journal of the EU shall be presumed to be in conformity with the requirements of this Regulation."
+  },
+  {
+    "id": "art41",
+    "num": "Article 41",
+    "title": "Common Specifications",
+    "framework": "eu_ai_act",
+    "text": "Where harmonised standards do not exist or where the Commission considers that the relevant harmonised standards are insufficient, the Commission may establish common specifications for requirements of Chapter 2 by means of implementing acts."
+  },
+  {
+    "id": "art42",
+    "num": "Article 42",
+    "title": "Presumption of Conformity for GPAI",
+    "framework": "eu_ai_act",
+    "text": "AI systems trained on data that covers the specific geographic, behavioural, functional and contextual settings within which the high-risk AI system is intended to be used shall be presumed to comply with data governance requirements."
+  },
+  {
+    "id": "art43",
+    "num": "Article 43",
+    "title": "Conformity Assessment Procedures",
+    "framework": "eu_ai_act",
+    "text": "For high-risk AI systems listed in point 1 of Annex III, where in demonstrating the compliance of a high-risk AI system with the requirements, the provider has applied harmonised standards, the provider shall follow the conformity assessment procedure."
+  },
+  {
+    "id": "art44",
+    "num": "Article 44",
+    "title": "Certificates",
+    "framework": "eu_ai_act",
+    "text": "Certificates issued by notified bodies shall be drawn up in an official language of the Member State in which the notified body is established. Certificates shall be valid for the period they indicate, which shall not exceed 5 years."
+  },
+  {
+    "id": "art45",
+    "num": "Article 45",
+    "title": "Information Obligations on Notified Bodies",
+    "framework": "eu_ai_act",
+    "text": "Notified bodies shall inform the notifying authority of certificates issued, refused, suspended, withdrawn or otherwise restricted, and of circumstances affecting the scope of or conditions for notification."
+  },
+  {
+    "id": "art46",
+    "num": "Article 46",
+    "title": "Market Surveillance",
+    "framework": "eu_ai_act",
+    "text": "National competent authorities shall perform market surveillance to verify that high-risk AI systems comply with the requirements and obligations in this Regulation. They shall investigate complaints or reports from any source regarding non-compliance."
+  },
+  {
+    "id": "art47",
+    "num": "Article 47",
+    "title": "Access to Data",
+    "framework": "eu_ai_act",
+    "text": "Market surveillance authorities shall be granted access to the training, validation and testing datasets used for the development of high-risk AI systems, including through application programming interfaces or other appropriate technical means."
+  },
+  {
+    "id": "art48",
+    "num": "Article 48",
+    "title": "Penalties",
+    "framework": "eu_ai_act",
+    "text": "Non-compliance with the prohibition of the AI practices referred to in Article 5 shall be subject to administrative fines of up to EUR 35,000,000 or, if the offender is an undertaking, up to 7% of its total worldwide annual turnover."
+  },
+  {
+    "id": "art49",
+    "num": "Article 49",
+    "title": "Penalties for SMEs",
+    "framework": "eu_ai_act",
+    "text": "For SMEs including start-ups, each Member State may establish rules providing for administrative fines lower than those set out in Article 48 for non-compliance with obligations or requirements, provided proportionality is respected."
+  },
+  {
+    "id": "art50",
+    "num": "Article 50",
+    "title": "Transparency for Certain AI Systems",
+    "framework": "eu_ai_act",
+    "text": "Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system. Chatbots must disclose their AI nature."
+  },
+  {
+    "id": "art51",
+    "num": "Article 51",
+    "title": "Classification of GPAI Models",
+    "framework": "eu_ai_act",
+    "text": "A general-purpose AI model shall be classified as a general-purpose AI model with systemic risk if it has high impact capabilities evaluated on the basis of appropriate technical tools and methodologies, including indicators and benchmarks."
+  },
+  {
+    "id": "art52",
+    "num": "Article 52",
+    "title": "Transparency for GPAI Models",
+    "framework": "eu_ai_act",
+    "text": "Providers of general-purpose AI models shall draw up and keep up-to-date technical documentation. They shall provide information and documentation to providers of AI systems who intend to integrate the GPAI model into their AI system."
+  },
+  {
+    "id": "art53",
+    "num": "Article 53",
+    "title": "Obligations for GPAI Model Providers",
+    "framework": "eu_ai_act",
+    "text": "Providers of general-purpose AI models shall draw up technical documentation, make available information and documentation to downstream providers, establish a policy to comply with copyright law, publish a summary about the training content."
+  },
+  {
+    "id": "art54",
+    "num": "Article 54",
+    "title": "Authorised Representatives for GPAI",
+    "framework": "eu_ai_act",
+    "text": "Providers of general-purpose AI models not established in the Union shall, prior to making their models available in the Union, appoint by written mandate an authorised representative established in the Union."
+  },
+  {
+    "id": "art55",
+    "num": "Article 55",
+    "title": "Obligations for Systemic Risk GPAI",
+    "framework": "eu_ai_act",
+    "text": "Providers of general-purpose AI models with systemic risk shall perform model evaluation, assess and mitigate systemic risks, report serious incidents to the AI Office, ensure adequate cybersecurity protection."
+  },
+  {
+    "id": "art56",
+    "num": "Article 56",
+    "title": "AI Office",
+    "framework": "eu_ai_act",
+    "text": "The AI Office shall be responsible for monitoring the implementation and enforcement of the rules on general-purpose AI models. It shall have the power to request information, conduct evaluations and impose fines for non-compliance."
+  },
+  {
+    "id": "art57",
+    "num": "Article 57",
+    "title": "Scientific Panel",
+    "framework": "eu_ai_act",
+    "text": "The Commission shall establish a scientific panel of independent experts to support enforcement activities related to general-purpose AI models. The panel shall provide technical advice, opinions and analysis."
+  },
+  {
+    "id": "art58",
+    "num": "Article 58",
+    "title": "Access to GPAI Models",
+    "framework": "eu_ai_act",
+    "text": "For the purpose of monitoring the implementation and enforcement of this Regulation, the Commission shall have access to the documentation and information referred to in Article 52. The AI Office may conduct evaluations of general-purpose AI models."
+  },
+  {
+    "id": "art59",
+    "num": "Article 59",
+    "title": "National Competent Authorities",
+    "framework": "eu_ai_act",
+    "text": "Each Member State shall establish or designate at least one national competent authority for the purpose of supervising the application and implementation of this Regulation. National competent authorities shall be organised to safeguard objectivity and impartiality."
+  },
+  {
+    "id": "art60",
+    "num": "Article 60",
+    "title": "AI Regulatory Sandboxes",
+    "framework": "eu_ai_act",
+    "text": "Member States shall ensure that their national competent authorities establish at least one AI regulatory sandbox at national level to facilitate the development and testing of innovative AI systems under strict regulatory oversight."
+  },
+  {
+    "id": "art61",
+    "num": "Article 61",
+    "title": "Real World Testing",
+    "framework": "eu_ai_act",
+    "text": "Providers and prospective providers may conduct testing of high-risk AI systems in real world conditions outside an AI regulatory sandbox, in accordance with a real world testing plan and for a limited time period."
+  },
+  {
+    "id": "art62",
+    "num": "Article 62",
+    "title": "Reporting Obligations for Sandboxes",
+    "framework": "eu_ai_act",
+    "text": "National competent authorities shall submit annual reports to the AI Office on the results of the AI regulatory sandboxes and, where appropriate, on the results from real world testing of AI systems. Reports shall include best practices and lessons learned."
+  },
+  {
+    "id": "art63",
+    "num": "Article 63",
+    "title": "Support for SMEs and Startups",
+    "framework": "eu_ai_act",
+    "text": "Member States shall take measures to ensure that SMEs and start-ups have access to AI regulatory sandboxes. Competent authorities shall ensure that SMEs and start-ups receive priority access and that fees for SMEs are proportionate."
+  },
+  {
+    "id": "art64",
+    "num": "Article 64",
+    "title": "Access to Data for Authorities",
+    "framework": "eu_ai_act",
+    "text": "National market surveillance authorities shall be granted full access to the training, validation and testing data used for development of high-risk AI systems including through API access or other technical means."
+  },
+  {
+    "id": "art65",
+    "num": "Article 65",
+    "title": "EU-Level Enforcement",
+    "framework": "eu_ai_act",
+    "text": "The AI Office shall conduct evaluations of general-purpose AI models and may impose fines on providers of GPAI models that have been found to infringe this Regulation. The maximum fine shall be 3% of global annual turnover."
+  },
+  {
+    "id": "art66",
+    "num": "Article 66",
+    "title": "Fines for GPAI Providers",
+    "framework": "eu_ai_act",
+    "text": "Providers of general-purpose AI models shall be subject to administrative fines where they fail to comply with their obligations. Fines shall be effective, proportionate and dissuasive taking into account the nature of the infringement."
+  },
+  {
+    "id": "art67",
+    "num": "Article 67",
+    "title": "Limitation Periods",
+    "framework": "eu_ai_act",
+    "text": "The powers conferred on the national competent authorities to impose fines shall be subject to a limitation period of 5 years from the date on which the infringement was committed or, in the case of continuous infringements, from the date on which the infringement ceased."
+  },
+  {
+    "id": "art68",
+    "num": "Article 68",
+    "title": "Jurisdiction",
+    "framework": "eu_ai_act",
+    "text": "Where a provider of a high-risk AI system or a GPAI model has its registered office or its place of establishment in more than one Member State, the lead authority shall be the competent authority of the Member State where the provider has its main establishment in the Union."
+  },
+  {
+    "id": "art69",
+    "num": "Article 69",
+    "title": "Codes of Practice",
+    "framework": "eu_ai_act",
+    "text": "The AI Office and national competent authorities shall facilitate the drawing up of codes of practice to contribute to the proper application of this Regulation, taking into account international approaches. The AI Office shall encourage participation."
+  },
+  {
+    "id": "art70",
+    "num": "Article 70",
+    "title": "Confidentiality",
+    "framework": "eu_ai_act",
+    "text": "National competent authorities and the Commission shall ensure the confidentiality of information and data obtained in carrying out their tasks and activities. They shall not disclose confidential information to any other party."
+  },
+  {
+    "id": "art71",
+    "num": "Article 71",
+    "title": "Cooperation with Third Countries",
+    "framework": "eu_ai_act",
+    "text": "The Commission may negotiate international agreements with third countries for the purpose of enabling and organising cooperation between competent authorities of the Union and of those third countries with regard to the implementation of this Regulation."
+  },
+  {
+    "id": "art72",
+    "num": "Article 72",
+    "title": "AI Advisory Forum",
+    "framework": "eu_ai_act",
+    "text": "An advisory forum shall be established to provide technical expertise and advise the European AI Board and the Commission on specific aspects of implementation of this Regulation. The advisory forum shall have balanced representation of stakeholders."
+  },
+  {
+    "id": "art73",
+    "num": "Article 73",
+    "title": "European AI Board",
+    "framework": "eu_ai_act",
+    "text": "A European Artificial Intelligence Board shall be established. It shall ensure consistency in the application of this Regulation across Member States, share information and coordinate their activities, provide guidance to national authorities."
+  },
+  {
+    "id": "art74",
+    "num": "Article 74",
+    "title": "Structure of the AI Board",
+    "framework": "eu_ai_act",
+    "text": "The Board shall be composed of one national supervisory authority representative from each Member State. Each Member shall have one vote. The Commission shall participate without voting rights and ensure secretariat for the Board."
+  },
+  {
+    "id": "art75",
+    "num": "Article 75",
+    "title": "Tasks of the AI Board",
+    "framework": "eu_ai_act",
+    "text": "The Board shall issue opinions, recommendations and written contributions on questions related to implementation and enforcement of this Regulation. It shall coordinate and cooperate with the AI Office and national competent authorities."
+  },
+  {
+    "id": "art76",
+    "num": "Article 76",
+    "title": "Right to Lodge Complaint",
+    "framework": "eu_ai_act",
+    "text": "Any natural or legal person may lodge a complaint with the relevant national competent authority where they consider that their rights have been infringed due to a high-risk AI system. The authority shall investigate the complaint diligently."
+  },
+  {
+    "id": "art77",
+    "num": "Article 77",
+    "title": "Rights of Affected Persons",
+    "framework": "eu_ai_act",
+    "text": "Any natural person who considers that a decision affecting them was taken by an operator on the basis of an output from a high-risk AI system shall have the right to obtain from the operator clear and meaningful explanations of the system's role."
+  },
+  {
+    "id": "art78",
+    "num": "Article 78",
+    "title": "Privacy and Data Protection",
+    "framework": "eu_ai_act",
+    "text": "This Regulation shall apply without prejudice to Regulation (EU) 2016/679 (GDPR). Where the processing of personal data is involved in the deployment of an AI system, the requirements of this Regulation shall be applied and interpreted consistently with GDPR."
+  },
+  {
+    "id": "art79",
+    "num": "Article 79",
+    "title": "Implementation",
+    "framework": "eu_ai_act",
+    "text": "The Commission shall adopt implementing acts to specify the technical and methodological requirements for the application of this Regulation, including detailed rules on the format and content of the technical documentation, conformity assessment procedures."
+  },
+  {
+    "id": "art80",
+    "num": "Article 80",
+    "title": "Evaluation and Review",
+    "framework": "eu_ai_act",
+    "text": "The Commission shall assess the impact and effectiveness of this Regulation at regular intervals of not more than 4 years and report to the European Parliament and to the Council. The Commission shall consider whether it is appropriate to modify the list of AI systems in Annex III."
+  },
+  {
+    "id": "art81",
+    "num": "Article 81",
+    "title": "Exercise of Delegation",
+    "framework": "eu_ai_act",
+    "text": "The power to adopt delegated acts is conferred on the Commission subject to the conditions laid down in this Article. The delegation of power shall be conferred for a period of 5 years from the date of entry into force of this Regulation."
+  },
+  {
+    "id": "art82",
+    "num": "Article 82",
+    "title": "Transitional Provisions GPAI",
+    "framework": "eu_ai_act",
+    "text": "General-purpose AI models that have been placed on the market before the date referred to in Article 85(2) shall comply with the obligations in this Regulation by 12 months after the date referred to in Article 85(2)."
+  },
+  {
+    "id": "art83",
+    "num": "Article 83",
+    "title": "Transitional Provisions High-Risk",
+    "framework": "eu_ai_act",
+    "text": "High-risk AI systems that have been placed on the market or put into service before the date of application of this Regulation shall comply with the requirements of this Regulation by 31 December 2030, provided they do not undergo significant changes."
+  },
+  {
+    "id": "art84",
+    "num": "Article 84",
+    "title": "Repeal",
+    "framework": "eu_ai_act",
+    "text": "Regulation (EU) 2021/694 establishing the Digital Europe Programme is amended. The AI regulatory sandbox provisions shall be aligned with this Regulation."
+  },
+  {
+    "id": "art85",
+    "num": "Article 85",
+    "title": "Entry into Force",
+    "framework": "eu_ai_act",
+    "text": "This Regulation shall enter into force on the twentieth day following its publication in the Official Journal of the European Union. It shall apply from 2 August 2026, except for Articles 1-4 (from 2 February 2025) and Articles 5-14 (from 2 August 2025)."
+  },
+  {
+    "id": "gdpr4",
+    "num": "GDPR Article 4",
+    "title": "Definitions",
+    "framework": "gdpr",
+    "text": "Personal data means any information relating to an identified or identifiable natural person (data subject). Processing means any operation performed on personal data. Controller means the natural or legal person who determines the purposes and means of processing."
+  },
+  {
+    "id": "gdpr5",
+    "num": "GDPR Article 5",
+    "title": "Principles of Processing",
+    "framework": "gdpr",
+    "text": "Personal data shall be processed lawfully, fairly and transparently. Collected for specified, explicit and legitimate purposes. Adequate, relevant and limited to what is necessary. Accurate and kept up to date. Kept for no longer than necessary. Processed securely."
+  },
+  {
+    "id": "gdpr6",
+    "num": "GDPR Article 6",
+    "title": "Lawfulness of Processing",
+    "framework": "gdpr",
+    "text": "Processing shall be lawful only if at least one of the following applies: consent, contractual necessity, legal obligation, vital interests, public task, or legitimate interests. AI systems processing personal data must have a valid legal basis."
+  },
+  {
+    "id": "gdpr13",
+    "num": "GDPR Article 13",
+    "title": "Information to Data Subjects",
+    "framework": "gdpr",
+    "text": "Where personal data are collected from the data subject, the controller shall provide information including identity of controller, purposes and legal basis, recipients, retention periods, and rights of the data subject including right to withdraw consent."
+  },
+  {
+    "id": "gdpr22",
+    "num": "GDPR Article 22",
+    "title": "Automated Decision Making",
+    "framework": "gdpr",
+    "text": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects or similarly significantly affects them. AI systems making automated decisions must comply with this article."
+  },
+  {
+    "id": "gdpr25",
+    "num": "GDPR Article 25",
+    "title": "Data Protection by Design",
+    "framework": "gdpr",
+    "text": "The controller shall implement appropriate technical and organisational measures for data protection by design and by default. AI systems must integrate data protection principles from the earliest stages of design."
+  },
+  {
+    "id": "gdpr35",
+    "num": "GDPR Article 35",
+    "title": "Data Protection Impact Assessment",
+    "framework": "gdpr",
+    "text": "Where processing is likely to result in a high risk to natural persons, the controller shall carry out a DPIA. AI systems that systematically process personal data on a large scale require DPIA before deployment."
+  },
+  {
+    "id": "nist_govern",
+    "num": "NIST GOVERN",
+    "title": "AI Risk Governance",
+    "framework": "nist_ai_rmf",
+    "text": "GOVERN function ensures that policies, processes, procedures and practices are in place so that AI risk management is integrated into organizational processes. Includes establishing culture of risk awareness and accountability for AI systems."
+  },
+  {
+    "id": "nist_map",
+    "num": "NIST MAP",
+    "title": "AI Risk Mapping",
+    "framework": "nist_ai_rmf",
+    "text": "MAP function categorizes AI risks in context. Context is established and understood. Scientific and engineering principles are applied. Risks are identified and categorized including potential harmful impacts on individuals and groups."
+  },
+  {
+    "id": "nist_measure",
+    "num": "NIST MEASURE",
+    "title": "AI Risk Measurement",
+    "framework": "nist_ai_rmf",
+    "text": "MEASURE function analyzes, assesses, benchmarks and monitors AI risks using quantitative and qualitative methods. AI systems are evaluated for trustworthiness including fairness, transparency, accountability, reliability and safety."
+  },
+  {
+    "id": "nist_manage",
+    "num": "NIST MANAGE",
+    "title": "AI Risk Management",
+    "framework": "nist_ai_rmf",
+    "text": "MANAGE function addresses, prioritizes and plans for AI risks. Treatments such as avoidance, transfer, mitigation or acceptance are applied. Residual risks are monitored and documented. Plans are established for incident response."
+  }
+]
