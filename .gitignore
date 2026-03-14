@@ -22,3 +22,7 @@ themis-ui/dist/
 # Logs
 *.log
 logs/
+
+data/*.pdf
+data/*.db
+*.pdf
