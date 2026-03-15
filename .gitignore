@@ -26,3 +26,5 @@ data/*.pdf
 data/*.db
 *.pdf
 
+
+data/qdrant_db/

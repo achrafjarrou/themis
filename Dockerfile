@@ -17,9 +17,6 @@ COPY . .
 
 RUN mkdir -p data/uploads data/checkpoints data/qdrant_db
 
-# Seeder Qdrant au build time
-RUN python seed_qdrant.py || true
+RUN chmod +x start.sh
 
-EXPOSE 7860
-
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["bash", "start.sh"]
