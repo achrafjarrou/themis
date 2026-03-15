@@ -44,5 +44,5 @@ async def root():
     return {
         "system": "THEMIS", "version": "1.0.0",
         "differentiators": ["EvidenceChain™", "ContradictionDetector™", "HyDE+RRF+CrossEncoder"],
-        "docs": "/docs", "ui": "http://localhost:5173",
+        "docs": "/docs", "ui": "https://themis-compliance.vercel.app",
     }

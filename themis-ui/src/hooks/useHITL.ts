@@ -1,4 +1,6 @@
-﻿import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+
+const HF_BASE = "wss://achrafjarrou-themis.hf.space"
 
 export function useHITL(sid: string | undefined, active: boolean) {
   const wsRef  = useRef<WebSocket | null>(null)
@@ -7,7 +9,7 @@ export function useHITL(sid: string | undefined, active: boolean) {
 
   useEffect(() => {
     if (!sid || !active) return
-    const ws = new WebSocket(`ws://localhost:8000/sessions/${sid}/hitl`)
+    const ws = new WebSocket(HF_BASE + "/sessions/" + sid + "/hitl")
     wsRef.current = ws
     ws.onmessage = (e) => {
       const d = JSON.parse(e.data)

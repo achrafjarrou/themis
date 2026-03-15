@@ -36,10 +36,12 @@ export default function AnalysisPage() {
     return () => { if (timerRef.current) clearInterval(timerRef.current) }
   }, [isRunning, isHITL])
 
-  // Fetch report on completion
+  // Fetch report on completion — auto-redirect apres 2s si report recu
   useEffect(() => {
     if (!isComplete || !sid) return
-    api.report(sid).then(setReport).catch(() => {})
+    api.report(sid)
+      .then(r => { setReport(r); setTimeout(() => nav("/report/" + sid), 2000) })
+      .catch(() => {})
   }, [isComplete, sid])
 
   return (
@@ -55,30 +57,31 @@ export default function AnalysisPage() {
 
         {/* Hero */}
         <div style={{ marginBottom:40 }}>
+          <div style={{ marginBottom:8 }}>
+            <span style={{
+              fontFamily:"var(--mono)", fontSize:10, letterSpacing:3,
+              color:"#3b82f6", textTransform:"uppercase",
+            }}>
+              {isComplete ? "✓ Analysis Complete" : isFailed ? "✗ Analysis Failed" : isHITL ? "⏸ Awaiting Review" : "⟳ Processing"}
+            </span>
+          </div>
           <h1 style={{
             fontFamily:"var(--display)", fontWeight:800,
-            fontSize:"clamp(36px,6vw,52px)", lineHeight:.9, letterSpacing:"-2px", color:"#fff", marginBottom:10,
+            fontSize:"clamp(40px,6vw,64px)", lineHeight:.88,
+            letterSpacing:"-3px", marginBottom:16,
+            color: isComplete ? "#10b981" : isFailed ? "#ef4444" : isHITL ? "#f59e0b" : "#fff",
           }}>
-            Analysis<br />
-            <span style={{
-              background: isComplete
-                ? "linear-gradient(135deg,#10b981,#06b6d4)"
-                : isFailed
-                ? "linear-gradient(135deg,#ef4444,#f59e0b)"
-                : isHITL
-                ? "linear-gradient(135deg,#f59e0b,#f97316)"
-                : "linear-gradient(135deg,#60a5fa,#a78bfa)",
-              WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", fontStyle:"italic", display:"inline-block",
-            }}>
-              {isComplete ? "Complete" : isFailed ? "Failed" : isHITL ? "Paused" : "Running"}
-            </span>
+            {isComplete ? "Complete" : isFailed ? "Failed" : isHITL ? "Paused" : "Analysis"}
+            {(!isComplete && !isFailed && !isHITL) && (
+              <span style={{ color:"#3b82f6" }}>.</span>
+            )}
           </h1>
           {(isRunning || isHITL) && (
-            <div style={{ fontFamily:"var(--mono)", fontSize:12, color:"var(--text3)", display:"flex", alignItems:"center", gap:12 }}>
-              <div style={{ flex:1, height:2, background:"var(--border2)", borderRadius:2, overflow:"hidden" }}>
-                <div style={{ height:"100%", width:`${pct}%`, background:"linear-gradient(90deg,#3b82f6,#8b5cf6)", borderRadius:2, transition:"width .5s ease" }} />
+            <div style={{ fontFamily:"var(--mono)", fontSize:11, color:"var(--text3)", display:"flex", alignItems:"center", gap:12, maxWidth:400 }}>
+              <div style={{ flex:1, height:1, background:"var(--border2)", borderRadius:1, overflow:"hidden" }}>
+                <div style={{ height:"100%", width:`${pct}%`, background:"linear-gradient(90deg,#3b82f6,#8b5cf6)", transition:"width .5s ease" }} />
               </div>
-              <span>{pct}% · {fmt(elapsed)}</span>
+              <span style={{ flexShrink:0 }}>{pct}% · {fmt(elapsed)}</span>
             </div>
           )}
         </div>
@@ -114,6 +117,12 @@ export default function AnalysisPage() {
         <PipelineTracker activeNode={node} elapsed={elapsed} completed={isComplete} />
 
         {/* Completed metrics */}
+        {isComplete && !report && (
+          <div style={{ textAlign:"center", padding:"40px 0", fontFamily:"var(--mono)", fontSize:12, color:"var(--text3)" }}>
+            <div style={{ fontSize:24, marginBottom:12 }}>✓</div>
+            <div>Report ready — redirecting...</div>
+          </div>
+        )}
         {isComplete && report && (
           <div style={{ marginTop:36 }}>
             <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:10, marginBottom:24 }}>

@@ -1,5 +1,7 @@
-﻿import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import type { StreamEvent, SessionStatus } from "../types"
+
+const HF_BASE = "https://achrafjarrou-themis.hf.space"
 
 export function useStream(sid: string | undefined) {
   const [event, setEvent] = useState<StreamEvent | null>(null)
@@ -8,7 +10,7 @@ export function useStream(sid: string | undefined) {
 
   useEffect(() => {
     if (!sid) return
-    const es = new EventSource(`http://localhost:8000/sessions/${sid}/stream`)
+    const es = new EventSource(HF_BASE + "/sessions/" + sid + "/stream")
     esRef.current = es
     es.onmessage = (e) => {
       try {

@@ -5,9 +5,9 @@ from core.state  import ThemisState
 from core.models import GapStatus
 
 MAX_RETRIES = 2
-CONF_RETRY  = 0.30   # retry if confidence < this
-CONF_HITL   = 0.20   # escalate to human if confidence < this
-CRIT_HITL   = 3       # escalate if more than this many critical missing gaps
+CONF_RETRY  = 0.70   # retry if confidence < this
+CONF_HITL   = 0.60   # escalate to human if confidence < this
+CRIT_HITL   = 0       # escalate if more than this many critical missing gaps
 
 
 
