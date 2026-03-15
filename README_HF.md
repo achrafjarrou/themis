@@ -1,4 +1,4 @@
----
+﻿﻿---
 title: THEMIS
 emoji: ⚖️
 colorFrom: blue
@@ -10,12 +10,11 @@ pinned: true
 
 <div align="center">
 
-# ⚖️ THEMIS
-### Autonomous EU AI Act Compliance Intelligence
+# THEMIS - Autonomous EU AI Act Compliance Intelligence
 
-**Upload an AI system PDF → Get a full compliance report in 2 minutes**
+**Upload an AI system PDF. Get a full compliance report in 2 minutes. With cryptographic proof.**
 
-[🚀 Live UI → themis-compliance.vercel.app](https://themis-compliance.vercel.app) · [📖 API Docs → /docs](https://achrafjarrou-themis.hf.space/docs)
+[Live UI - themis-compliance.vercel.app](https://themis-compliance.vercel.app) | [API Docs](https://achrafjarrou-themis.hf.space/docs)
 
 </div>
 
@@ -25,7 +24,7 @@ pinned: true
 
 1. Go to **[themis-compliance.vercel.app](https://themis-compliance.vercel.app)**
 2. Upload any AI system documentation PDF
-3. Get a full EU AI Act + GDPR + NIST AI RMF compliance report with cryptographic proof
+3. Get a full EU AI Act + GDPR + NIST AI RMF compliance report
 
 **Test files ready to use:**
 - `HighRisk_FacialRecognition.pdf` — biometric surveillance, expect UNACCEPTABLE risk
@@ -38,10 +37,17 @@ pinned: true
 
 THEMIS is a **6-node LangGraph multi-agent pipeline** that automates EU AI Act compliance auditing:
 ```
-PDF → classify → detect_contradictions → map_obligations (RAG) → analyze_gaps → [HITL?] → report
+PDF -> classify -> detect_contradictions -> map_obligations (RAG) -> analyze_gaps -> [HITL?] -> report
 ```
 
-Each compliance gap includes an **EvidenceChain™** — a 4-step reasoning chain (LEGAL_PREMISE → DOCUMENT_FACT → INFERENCE → CONCLUSION) with a SHA-256 hash for tamper-proof auditability.
+Each compliance gap includes an **EvidenceChain(TM)** — a 4-step reasoning chain:
+```
+LEGAL_PREMISE  ->  Article 13 GDPR (confidence: 95%)
+DOCUMENT_FACT  ->  "System handles 400,000 interactions/day" (80%)
+INFERENCE      ->  "Scale indicates high-risk processing" (70%)
+CONCLUSION     ->  "DPIA required — not found in documentation" (85%)
+SHA-256 Hash   ->  a3f8c2d1e9b74f6a  (tamper-proof)
+```
 
 ---
 
@@ -53,6 +59,7 @@ curl -X POST https://achrafjarrou-themis.hf.space/analyze \
   -F "system_name=Your AI System" \
   -F "frameworks=EU AI Act" \
   -F "frameworks=GDPR"
+
 # Returns: {"session_id": "TMS-XXXXXX"}
 
 # 2. Stream progress (Server-Sent Events)
@@ -71,11 +78,11 @@ curl https://achrafjarrou-themis.hf.space/health
 
 | System | Risk | Score | Critical Gaps |
 |---|---|---|---|
-| NEXUS FaceID (biometric surveillance) | 🔴 UNACCEPTABLE | 73/100 | 13 |
-| MediAssist AI (230 hospitals) | 🟡 LIMITED | 67/100 | 7 |
-| ContentStream Recommender | 🟢 MINIMAL | 69/100 | 2 |
+| NEXUS FaceID (biometric surveillance) | UNACCEPTABLE | 73/100 | 13 |
+| MediAssist AI (230 hospitals) | LIMITED | 67/100 | 7 |
+| ContentStream Recommender | MINIMAL | 69/100 | 2 |
 
-*EvidenceChain™ integrity: verified ✓ on all reports*
+EvidenceChain(TM) integrity: verified on all reports
 
 ---
 
@@ -92,12 +99,10 @@ curl https://achrafjarrou-themis.hf.space/health
 
 ---
 
-## Note on cold start
+## Cold start note
 
-This Space runs on HuggingFace free tier. If it is sleeping, the UI at [themis-compliance.vercel.app](https://themis-compliance.vercel.app) will automatically wake it up — allow 30–60 seconds on first load.
+This Space runs on HuggingFace free tier. If sleeping, the UI at [themis-compliance.vercel.app](https://themis-compliance.vercel.app) wakes it up automatically — allow 30-60 seconds on first load.
 
 ---
 
-<div align="center">
-<sub>THEMIS v1.0.0 · Built by <a href="https://linkedin.com/in/achrafjarrou">Achraf Jarrou</a> · EU AI Act enforcement Aug 2026</sub>
-</div>
+THEMIS v1.0.0 | Built by Achraf Jarrou (https://linkedin.com/in/achrafjarrou) | EU AI Act enforcement Aug 2026
