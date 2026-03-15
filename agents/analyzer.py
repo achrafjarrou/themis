@@ -87,6 +87,22 @@ async def _analyze_single(
                 _data["obligation"] = f"Comply with {article_ref} requirements"
             if not _data.get("severity"):
                 _data["severity"] = 2
+            # Normaliser tous les champs qui peuvent etre None ou non-iterables
+            steps = _data.get("remediation_steps") or []
+            if isinstance(steps, str): steps = [steps]
+            steps = [str(s) for s in steps if s]
+            if len(steps) < 2:
+                steps = (steps + ["Review and update documentation", "Consult legal compliance team"])[:4]
+            _data["remediation_steps"] = steps
+            refs = _data.get("cross_framework_refs") or []
+            if isinstance(refs, str): refs = [refs]
+            _data["cross_framework_refs"] = [
+                r.get("ref_type","") + " " + r.get("ref_article", r.get("ref",""))
+                if isinstance(r, dict) else str(r)
+                for r in refs if r
+            ]
+            if not _data.get("deadline_risk"):
+                _data["deadline_risk"] = None
             analysis = ArticleAnalysis(**_data)
         except asyncio.TimeoutError:
             logger.warning(f"[Analyzer] Timeout for {article_ref} — skipped")
