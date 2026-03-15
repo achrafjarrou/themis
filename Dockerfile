@@ -17,7 +17,9 @@ COPY . .
 
 RUN mkdir -p data/uploads data/checkpoints data/qdrant_db
 
-# HuggingFace Spaces utilise le port 7860
+# Seeder Qdrant au build time
+RUN python seed_qdrant.py || true
+
 EXPOSE 7860
 
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "7860"]
