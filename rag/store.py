@@ -10,7 +10,7 @@ import httpx
 from core.exceptions import RetrievalError
 
 QDRANT_PATH = "data/qdrant_db"
-COLLECTION  = "themis_regulations"
+COLLECTION  = "eu_ai_act"
 EMBED_MODEL = "nomic-embed-text"
 EMBED_DIM   = 768
 OLLAMA_URL  = "http://localhost:11434"
