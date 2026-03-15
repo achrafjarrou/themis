@@ -1,4 +1,4 @@
-﻿import { scoreColor, scoreLabel } from "../../lib/utils"
+import { scoreColor } from "../../lib/utils"
 
 export function ComplianceScore({ score, size = 80 }: { score: number; size?: number }) {
   const r = (size - 12) / 2

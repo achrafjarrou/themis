@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { Navbar } from "../components/layout/Navbar"
 import { PipelineTracker } from "../components/pipeline/PipelineTracker"
@@ -68,8 +68,7 @@ export default function AnalysisPage() {
                 : isHITL
                 ? "linear-gradient(135deg,#f59e0b,#f97316)"
                 : "linear-gradient(135deg,#60a5fa,#a78bfa)",
-              WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
-              fontStyle:"italic",
+              WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", fontStyle:"italic", display:"inline-block",
             }}>
               {isComplete ? "Complete" : isFailed ? "Failed" : isHITL ? "Paused" : "Running"}
             </span>

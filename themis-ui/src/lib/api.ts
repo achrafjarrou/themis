@@ -1,4 +1,4 @@
-﻿const BASE = "http://localhost:8000"
+const BASE = "https://achrafjarrou-themis.hf.space"
 
 async function req<T>(path: string, opts?: RequestInit): Promise<T> {
   const r = await fetch(BASE + path, opts)

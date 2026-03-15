@@ -12,7 +12,6 @@ __pycache__/
 # Data (trop lourd pour Railway)
 data/uploads/
 data/checkpoints/
-data/qdrant_db/
 *.db
 
 # Frontend build
@@ -26,3 +25,4 @@ logs/
 data/*.pdf
 data/*.db
 *.pdf
+
