@@ -10,21 +10,24 @@ from graph.nodes     import (
     analyze_gaps_node, hitl_node, generate_report_node,
 )
 from graph.routing   import route_after_analysis
+import core.models as _cm
 
-# Silence LangGraph Deserializing warnings
-from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+# Fix: enregistrer les types Pydantic pour éviter les warnings de désérialisation
 try:
-    from langgraph.checkpoint.memory import MemorySaver as _MS
-    import core.models as _cm
-    _allowed = [
-        (_cm, "Framework"), (_cm, "RiskLevel"), (_cm, "GapStatus"),
-        (_cm, "RiskClassification"), (_cm, "ComplianceGap"), (_cm, "ComplianceReport"),
+    from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+    _types_to_register = [
+        "Framework", "RiskLevel", "RiskClassification", "GapStatus",
+        "ComplianceGap", "ComplianceReport", "SeverityLevel", "Contradiction",
     ]
-    for _mod, _name in _allowed:
-        pass  # Types auto-handled by Pydantic model_dump/model_validate
+    for _type_name in _types_to_register:
+        _type = getattr(_cm, _type_name, None)
+        if _type is not None:
+            try:
+                JsonPlusSerializer.register(_type)
+            except Exception:
+                pass
 except Exception:
     pass
-
 
 logger.info("[Graph] Checkpointer: MemorySaver")
 

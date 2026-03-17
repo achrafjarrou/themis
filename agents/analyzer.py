@@ -10,7 +10,7 @@ from core.utils            import normalise_article_ref
 
 MAX_ARTICLE_TEXT = 800   # chars
 MAX_SYSTEM_TEXT  = 600   # chars
-SEMAPHORE_LIMIT  = 2     # appels LLM parallèles max (RAM limitée)
+SEMAPHORE_LIMIT  = 1     # 1 seul appel à la fois — évite TPM 429
 
 
 class ArticleAnalysis(BaseModel):
@@ -161,7 +161,12 @@ async def analyze_all_articles(
         _analyze_single(art, system_text, system_name, risk_level, sem)
         for art in articles
     ]
-    results = await asyncio.gather(*tasks)
+    # Traitement séquentiel avec délai pour éviter TPM 429 sur Groq free tier
+results = []
+for task in tasks:
+    result = await task
+    results.append(result)
+    await asyncio.sleep(0.5)  # 500ms entre chaque appel LLM
     gaps = [g for g in results if g is not None]
 
     if not gaps:
@@ -173,3 +178,4 @@ async def analyze_all_articles(
     )
     logger.info(f"[Analyzer] {len(gaps)}/{len(articles)} gaps built — conf={confidence:.2f}")
     return gaps, confidence
+
