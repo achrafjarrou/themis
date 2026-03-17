@@ -1,15 +1,10 @@
-# ═══════════════════════════════
-# SECRETS — JAMAIS PUBLICS
-# ═══════════════════════════════
+# Secrets
 .env
 .env.local
-.env.production
 .env.*
 !.env.example
 
-# ═══════════════════════════════
-# PYTHON
-# ═══════════════════════════════
+# Python
 .venv/
 venv/
 __pycache__/
@@ -23,34 +18,31 @@ build/
 .mypy_cache/
 .ruff_cache/
 
-# ═══════════════════════════════
-# DATA & DATABASES
-# ═══════════════════════════════
+# Data — générée au runtime
 data/uploads/
 data/checkpoints/
 data/qdrant_db/
 *.db
 *.sqlite
-*.pdf
 
-# ═══════════════════════════════
-# FRONTEND
-# ═══════════════════════════════
+# PDFs utilisateurs
+*.pdf
+!data/eu_ai_act.pdf
+!data/nist_ai_rmf.pdf
+
+# Frontend build
 themis-ui/node_modules/
 themis-ui/dist/
-themis-ui/.next/
-node_modules/
+themis-ui/.vercel/
 
-# ═══════════════════════════════
-# BACKUP FOLDERS — JAMAIS PUBLICS
-# ═══════════════════════════════
+# Backup files
+*.bak
 *_backup*/
-*_backup_*/
 
-# ═══════════════════════════════
-# LOGS & OS
-# ═══════════════════════════════
+# Logs
 *.log
 logs/
+
+# OS
 .DS_Store
 Thumbs.db
