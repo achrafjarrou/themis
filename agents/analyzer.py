@@ -161,12 +161,7 @@ async def analyze_all_articles(
         _analyze_single(art, system_text, system_name, risk_level, sem)
         for art in articles
     ]
-    # Traitement séquentiel avec délai pour éviter TPM 429 sur Groq free tier
-results = []
-for task in tasks:
-    result = await task
-    results.append(result)
-    await asyncio.sleep(0.5)  # 500ms entre chaque appel LLM
+    results = await asyncio.gather(*tasks)
     gaps = [g for g in results if g is not None]
 
     if not gaps:
@@ -178,4 +173,5 @@ for task in tasks:
     )
     logger.info(f"[Analyzer] {len(gaps)}/{len(articles)} gaps built — conf={confidence:.2f}")
     return gaps, confidence
+
 
