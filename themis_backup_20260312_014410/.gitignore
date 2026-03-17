@@ -1,8 +1,0 @@
-.venv/
-__pycache__/
-*.pyc
-data/uploads/
-data/qdrant_db/
-data/checkpoints.db
-.env
-*.pdf
