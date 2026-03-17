@@ -171,10 +171,9 @@ Running on HuggingFace free tier. If sleeping, the UI at [themis-compliance.verc
 
 **Achraf Jarrou** — Systems Engineer (EQF Level 7)
 
-[LinkedIn](https://linkedin.com/in/achraf-jarrou-4394bb342) · [GitHub](https://github.com/achrafjarrou) · Open to AI Engineer roles in EU (Amsterdam, Berlin) and Remote US/CA
-
-Other projects: [AEGIS](https://github.com/achrafjarrou/aegis) (AI interviews) · [Orion](https://github.com/achrafjarrou/orion) (MCP orchestration) · [KAIROS](https://github.com/achrafjarrou/kairos) (multi-agent governance)
+[LinkedIn](https://www.linkedin.com/in/achraf-jarrou-4394bb342/) · [GitHub](https://github.com/achrafjarrou) ·() achraf-jarrou.vercel.app/)
+s
 
 ---
 
-*Keywords: EU AI Act compliance, LangGraph multi-agent, RAG production, LLMOps, cryptographic audit trail, agentic AI, HITL, FastAPI, Python AI engineer, Amsterdam Berlin remote*
+*Keywords: EU AI Act compliance, LangGraph multi-agent, RAG production, LLMOps, cryptographic audit trail, agentic AI, HITL, FastAPI, Python AI engineer*
