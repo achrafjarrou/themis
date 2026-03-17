@@ -6,28 +6,29 @@ from typing   import AsyncGenerator
 from fastapi  import (
     APIRouter, UploadFile, File, Form, HTTPException, BackgroundTasks, Request, WebSocket, WebSocketDisconnect, Depends,
 )
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, HTMLResponse
 from loguru import logger
 from core.models  import Framework
 from core.state   import initial_state
 from ingest.parser import parse_system_doc
+from core.progress import subscribe as progress_subscribe
 
 router   = APIRouter()
 SESSIONS: dict[str, dict] = {}
 
 NODE_PROGRESS = {
-    "classify":             (20, "Classifying risk level..."),
-    "detect_contradictions": (38, "Running ContradictionDetector™..."),
+    "classify":              (20, "Classifying risk level..."),
+    "detect_contradictions": (38, "Running ContradictionDetector..."),
     "map_obligations":       (55, "HyDE + Rerank retrieval..."),
-    "analyze_gaps":          (82, "Building EvidenceChains™ (parallel)..."),
+    "analyze_gaps":          (82, "Building EvidenceChains (parallel)..."),
     "report":                (96, "Generating compliance dossier..."),
 }
 
 def get_graph(req: Request): return req.app.state.graph
 
+def _v(x): return x.value if hasattr(x, "value") else x
 
 
-def _v(x): return x.value if hasattr(x, 'value') else x
 @router.post("/analyze")
 async def analyze(
     bg: BackgroundTasks, graph=Depends(get_graph),
@@ -86,14 +87,16 @@ async def _run_pipeline(sid, pdf_path, system_name, frameworks, graph):
                     s["status"] = "running"; s["hitl_event"].clear()
 
         final = graph.get_state(config)
-        if "report" in final.values:
+        if "report" in final.values and final.values["report"] is not None:
             s["report"] = final.values["report"]
             s["status"] = "completed"; s["progress_pct"] = 100
         else:
             s["status"] = "error"; s["error"] = "No report generated"
 
     except Exception as e:
-        import traceback; s["status"] = "error"; s["error"] = str(e); logger.error(sid + " " + str(e) + "\n" + traceback.format_exc())
+        import traceback
+        s["status"] = "error"; s["error"] = str(e)
+        logger.error(sid + " " + str(e) + "\n" + traceback.format_exc())
 
 
 @router.get("/sessions/{sid}")
@@ -111,19 +114,24 @@ async def get_session(sid: str):
 
 
 @router.get("/sessions/{sid}/report")
-async def get_report(sid: str):
-    if sid not in SESSIONS: raise HTTPException(404)
+async def get_session_report(sid: str):
+    if sid not in SESSIONS:
+        raise HTTPException(404, "Session not found")
     s = SESSIONS[sid]
-    if s["status"] != "completed": raise HTTPException(202, f"Not ready: {s['status']}")
+    if s["status"] != "completed":
+        raise HTTPException(202, f"Not ready: {s['status']}")
     r = s["report"]
+    if r is None:
+        raise HTTPException(500, "Report is None despite completed status")
     return {
-        "session_id": sid, "system_name": r.system_name,
+        "session_id": sid,
+        "system_name": r.system_name,
         "compliance_score": r.compliance_score,
         "risk_classification": r.risk_classification.model_dump(),
         "gaps": [g.model_dump() for g in r.gaps],
         "contradictions": [c.model_dump() for c in r.contradictions],
         "critical_gaps": [g.model_dump() for g in r.critical_gaps],
-        "frameworks_analyzed": [(_v(f) if hasattr(f,'value') else str(f)) for f in r.frameworks_analyzed],
+        "frameworks_analyzed": [(_v(f) if hasattr(f, "value") else str(f)) for f in r.frameworks_analyzed],
         "evidence_integrity_ok": r.evidence_integrity_ok,
         "overall_confidence": r.overall_confidence,
         "generated_at": r.generated_at.isoformat(),
@@ -175,33 +183,15 @@ async def health():
                       for st in ["pending", "running", "completed", "error", "hitl_required"]},
     }
 
-# ── Real-time SSE progress stream ────────────────────────────────────
-from fastapi.responses import StreamingResponse
-from core.progress import subscribe as progress_subscribe
 
 @router.get("/progress/{job_id}")
 async def progress_stream(job_id: str):
-    """Server-Sent Events stream — one event per pipeline node."""
     return StreamingResponse(
         progress_subscribe(job_id),
         media_type="text/event-stream",
         headers={
-            "Cache-Control":               "no-cache",
-            "X-Accel-Buffering":           "no",
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
             "Access-Control-Allow-Origin": "*",
         },
     )
-
-
-# ── Compliance report download ────────────────────────────────────────
-from fastapi.responses import HTMLResponse
-import json as _json
-
-@router.get("/report/{job_id}", response_class=HTMLResponse)
-async def get_report(job_id: str):
-    """Return the generated HTML compliance dossier."""
-    report_path = f"data/reports/{job_id}.html"
-    if not __import__("os").path.exists(report_path):
-        return HTMLResponse("<h1>Report not yet available</h1>", status_code=404)
-    with open(report_path, encoding="utf-8") as f:
-        return HTMLResponse(f.read())
